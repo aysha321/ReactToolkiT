@@ -1,0 +1,125 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+/* css of heading text */
+#over {
+  border-bottom: 1px dotted grey;
+  color: grey;
+  font-size: x-large;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+}
+
+/* css of main container */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+  background-color: #000000;
+  color: #fff;
+  padding: 14px;
+  margin: 0px 10px;
+  width: max-content;
+  border-radius: 4px;
+  font-size: 14px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+
+/* css of content of tooltip */
+.tooltip span {
+  display: block;
+  color: white;
+  font-weight: 800;
+  font-size: larger;
+  opacity: 0.9;
+  word-spacing: 2px;
+}
+
+/* tooltip of top position */
+.tooltip-top {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-top::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #000 #0000 #0000 #0000;
+}
+
+/* tooltip of bottom position */
+.tooltip-bottom {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-bottom::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #0000 #0000 #000 #0000;
+}
+
+/* tooltip of left position */
+
+.tooltip-left {
+  top: 50%;
+  right: calc(100% + 10px);
+  transform: translateY(-50%);
+}
+
+.tooltip-left::before {
+  content: '';
+  position: absolute;
+  right: -20%;
+  top: 25%;
+  transform: translateX(-50%);
+  border: 15px solid;
+
+  border-color: #0000 #0000 #0000 #000;
+}
+
+/* tooltip of right position */
+.tooltip-right {
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+}
+
+.tooltip-right::before {
+  content: '';
+  position: absolute;
+  left: -6%;
+  top: 25%;
+  transform: translateX(-50%);
+  border: 15px solid;
+
+  border-color: #0000 #000 #0000 #0000;
+}
+
+/* after hover it will visible */
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
